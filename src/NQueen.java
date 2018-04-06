@@ -1,16 +1,11 @@
 class buildBoard{
-
-
-    public int[] initialBoard(int []list){
+    public void initialBoard(int []list){
         for (int i = 0; i < list.length; i++){
             list[i] = i;
-            System.out.print(" | " + list[i]);
         }
-        System.out.print(" | ");
-        return list;
     }
     // 随机打乱数组
-    public static void randomizeArray(int [] list){
+    public void randomizeArray(int [] list){
         int arrSize = list.length;
         int ranIndex;
         for(int i = 0; i < arrSize; i++){
@@ -20,11 +15,11 @@ class buildBoard{
                 list[i] = list[ranIndex];
                 list[ranIndex] = temp;
             }
+            System.out.print(" | " + list[i]);
         }
-        System.out.print(list);
+        System.out.println(" | ");
     }
 }
-
 
 public class NQueen {
     public static void main(String []args){
@@ -34,5 +29,6 @@ public class NQueen {
         int [] list = new int [arrSize];
         buildBoard br = new buildBoard();
         br.initialBoard(list);
+        br.randomizeArray(list);
     }
 }
